@@ -18,9 +18,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-mdx`,
       options: {
-        plugins: [
+        extensions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -39,10 +40,10 @@ module.exports = {
               inlineCodeMarker: '÷',
             },
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          {resolve: 'gatsby-remark-copy-linked-files', options: {}},
+          {resolve: 'gatsby-remark-smartypants', options: {}},
         ],
-      },
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
